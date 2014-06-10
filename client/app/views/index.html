@@ -31,12 +31,14 @@
     </div>
 
     <div class="block end-blocks submit">
-      <div class="submit-button" >
         <button type="submit" ng-disabled="fileForm.$invalid">{{submitButtonText}}</button>
-      </div>
-      <div class="submit-container" ng-mouseover="enableMessage()" ng-mouseleave="disableMessage()" ng-show="fileForm.$invalid"> 
+      <div class="submit-container" ng-mouseover="enableErrorMessage()" ng-mouseleave="disableErrorMessage()" ng-show="fileForm.$invalid"> 
         <!-- Invisible element that surrounds Submit Button - allows mouse events when button disabled -->
       </div>
+    </div>
+    <div class="failure-end end-blocks" ng-show="uploadFailed">
+        <button type="button" >Retry</button>
+        <button type="reset" ng-click="reset()">Cancel</button>
     </div>
   </form>
 </div>
