@@ -5,7 +5,7 @@
     </p>
     <button>{{addButtonText}}</button>
     <p class="limitation-message bottom-p">
-      Up to 2GB
+      Only files up to 2GB will be uploaded
     </p>
   </div>
 
@@ -27,7 +27,7 @@
     <!-- span by default is ... -->
 
     <div class="block user-message">
-      <textarea placeholder={{messageText}}></textarea>
+      <textarea placeholder={{messageText}} required ng-model="message"></textarea>
     </div>
 
     <div class="block end-blocks submit">
