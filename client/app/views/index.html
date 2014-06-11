@@ -5,7 +5,7 @@
     </p>
     <button>{{addButtonText}}</button>
     <p class="limitation-message bottom-p">
-      Up to 2GB
+      Only files up to 2GB will be uploaded
     </p>
   </div>
 
@@ -27,16 +27,18 @@
     <!-- span by default is ... -->
 
     <div class="block user-message">
-      <textarea placeholder={{messageText}}></textarea>
+      <textarea placeholder={{messageText}} required ng-model="message"></textarea>
     </div>
 
     <div class="block end-blocks submit">
-      <div class="submit-button" >
         <button type="submit" ng-disabled="fileForm.$invalid">{{submitButtonText}}</button>
-      </div>
-      <div class="submit-container" ng-mouseover="enableMessage()" ng-mouseleave="disableMessage()" ng-show="fileForm.$invalid"> 
+      <div class="submit-container" ng-mouseover="enableErrorMessage()" ng-mouseleave="disableErrorMessage()" ng-show="fileForm.$invalid"> 
         <!-- Invisible element that surrounds Submit Button - allows mouse events when button disabled -->
       </div>
+    </div>
+    <div class="failure-end end-blocks" ng-show="uploadFailed">
+        <button type="button" >Retry</button>
+        <button type="reset" ng-click="reset()">Cancel</button>
     </div>
   </form>
 </div>

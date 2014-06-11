@@ -16,6 +16,7 @@
 }
 
 .end-blocks button {
+  z-index: 0;
   background-color: #62D8BF;
   color: white;
   width: 40%;
@@ -62,13 +63,13 @@
   display: block;
   float: left;
   clear: both;
-  border: 1px solid #E02A30;
+  border: 1px solid red;
   padding: 3px;
   padding-left: 4px;
   padding-right: 4px;
   z-index: 1;
   background-color: white;
-  color: #E02A30;
+  color: red;
 }
 .tool-tip::before {
   z-index: 2;
@@ -80,7 +81,7 @@
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 10px solid #E02A30; 
+  border-bottom: 10px solid red; 
 }
 .tool-tip::after {
   z-index: 3;
@@ -109,6 +110,7 @@
   border: none;
   outline: none;
   resize: none;
+  overflow: auto;
 }
 
 .submit {
@@ -119,19 +121,16 @@
   position: relative;
 }
 
-.submit-button {
-  position: relative;
-}
-
 .submit-container {
   position: absolute;
   z-index: 1;
   top: 20px;
   bottom: 20px;
-  left: 105px;
-  right: 105px;
+  left: 0px;
+  right: 0px;
   width: 40%;
   margin: 0 auto;
+  text-align: center;
 }
 
 .submit button {
@@ -140,6 +139,21 @@
 
 .submit button[disabled] {
   background-color: #BCCECE;
+  padding: 10px;
+}
+
+.failure-end {
+  position: relative;
+  margin: 0 auto;
+  z-index: 2;
+  width: 90%;
+  bottom: 57px;
+  text-align: center;
+}
+
+.failure-end button {
+  margin-right: 5px;
+  margin-left: 5px;
   padding: 10px;
 }
 
